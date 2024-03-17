@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Lock Code</th>
+        <th>Buttons</th>
+    </tr>
+    @for(lock of locks; track $index){
+        <tr>
+            <td>{{lock.id}}</td>
+            <td>{{lock.code}}</td>
+            <td>
+                <a [routerLink]="['/edit-lock', lock.id]">Edit</a> | <a [routerLink]="['/delete-lock', lock.id]">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,13 @@
+<form (ngSubmit)="editKey(key); $event.preventDefault()">
+    <label for="code">Key Code</label>
+    <input name="code" [(ngModel)]="key.code" required/>
+    
+    <label for="quantity">Quantity</label>
+    <input type="number" name="quantity" [(ngModel)]="key.quantity" required/>
+
+    <label for="lock">Lock</label>
+    <select class="form-control" id="lock" name="lock" [(ngModel)]="key.lock">
+        <option *ngFor="let lock of locks" [ngValue]="lock">{{lock.code}}</option>
+      </select>
+    <button priority="submit">Submit</button>
+</form>

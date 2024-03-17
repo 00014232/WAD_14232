@@ -16,6 +16,11 @@ namespace api14232.DAL.Repository
 
         public async Task CreateAsync(Key model)
         {
+            var foundLock = await _context.Locks.FirstOrDefaultAsync(l => l.Id == model.Lock.Id);
+            if (foundLock != null)
+            {
+                model.Lock = foundLock;
+            }
             await _context.AddAsync(model);
             await _context.SaveChangesAsync();
         }

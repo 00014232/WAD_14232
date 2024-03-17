@@ -1,0 +1,5 @@
+<form (ngSubmit)="createLock(); $event.preventDefault()">
+    <label for="code">Lock <code></code></label>
+    <input priority="text" name="code" [(ngModel)]="lock.code" required/>
+    <button priority="submit">Submit</button>
+</form>

@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Key Code</th>
+        <th>Quantity</th>
+        <th>Lock Code</th>
+        <th>Buttons</th>
+    </tr>
+    @for(key of keys; track $index){
+        <tr>
+            <td>{{key.id}}</td>
+            <td>{{key.code}}</td>
+            <td>{{key.quantity}}</td>
+            <td>{{key.lock.code}}</td>
+            <td>
+                <a [routerLink]="['/edit-key', key.id]">Edit</a> | <a [routerLink]="['/delete-key', key.id]">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
